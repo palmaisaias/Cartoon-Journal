@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Your Entries{% endblock %}
+
+{% block content %}
+<div class="entries-container">
+    <h1>Your Entries</h1>
+    <div class="entries-list">
+        {% for entry in entries %}
+        <div class="entry-card">
+            <div class="entry-header">
+                <img src="{{ url_for('static', filename='images/avatar.png') }}" alt="User Avatar" class="entry-avatar">
+                <div class="entry-user-info">
+                    <p class="entry-username">{{ current_user.username }}</p>
+                    <p class="entry-date">{{ entry.date.strftime('%Y-%m-%d %H:%M') }}</p>
+                </div>
+            </div>
+            <div class="entry-content">
+                <p>{{ entry.text }}</p>
+                {% if entry.image_url %}
+                <img src="{{ entry.image_url }}" alt="Entry Image" class="entry-image">
+                {% endif %}
+            </div>
+            <div class="entry-footer">
+                <button class="btn btn-like">Like</button>
+                <button class="btn btn-comment">Comment</button>
+                <button class="btn btn-share">Share</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

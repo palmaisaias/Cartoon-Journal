@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <div class="content-wrapper">
+        <h1>Welcome to Cartoon Journal</h1>
+        <p>Create and manage your journal entries with ease.</p>
+        <div class="buttons">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-secondary">Register</a>
+        </div>
+        <div class="features">
+            <h2>Features</h2>
+            <ul style="font-size: small;">
+                <li>Create journal entries with text and images</li>
+                <li>View and edit your past entries</li>
+                <li>Secure and private</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

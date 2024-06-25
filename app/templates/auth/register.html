@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <div class="register-card">
+        <img src="{{ url_for('static', filename='images/journal_sample.jpg') }}" alt="Image Description" class="register-image">
+        <h1 class="register-title">Register</h1>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control", id="username") }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}
+                {{ form.email(class="form-control", id="email") }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control", id="password") }}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label(class="form-control-label") }}
+                {{ form.password2(class="form-control", id="password2") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p><a href="{{ url_for('auth.login') }}">Sign In</a></p>
+    </div>
+</div>
+{% endblock %}
