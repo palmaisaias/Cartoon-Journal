@@ -17,7 +17,7 @@
 #     return response.data[0].url
 
 # # Example usage:
-# api_key = "sk-proj-dTQQZkaoTFRiAbW9txo9T3BlbkFJRIl6Ybrj9drGL4sxnBex"
+# api_key = 'YOUR API KEY HERE'
 # image_path = os.path.join('app', 'static', 'images', '2_image.png')
 # mask_path = os.path.join('app', 'static', 'images', 'mask.png')
 
